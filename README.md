@@ -49,6 +49,12 @@ Remember that once you clone, you will still need to install everything:
 `npm i webpack webpack-cli` 
 Remember that `npm i` is just shorthand for `npm install`. A CLI is a terminal program that allows developers to run commands from the command line to communicate with the Webpack.
 
+(
+- rm -rf dist
+- npm run build
+
+)
+
 
 
 
