@@ -45,7 +45,9 @@ Remember that once you clone, you will still need to install everything:
 - Check the website running at [http://localhost:8080/](http://localhost:8080/). By default, this app runs on port 8080, but you can, of course, edit that in `server.js`. If everything, goes well, you'll see the app running and a message popping up say "I EXIST".
 
 - In another terminal - `npm run build-dev`, http://localhost:8081/ should open and respond as before
-
+- Install Webpack and the command line instructions (CLI) tool using npm, as:
+`npm i webpack webpack-cli` 
+Remember that `npm i` is just shorthand for `npm install`. A CLI is a terminal program that allows developers to run commands from the command line to communicate with the Webpack.
 
 
 
