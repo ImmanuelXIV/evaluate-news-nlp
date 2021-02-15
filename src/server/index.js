@@ -3,6 +3,9 @@ const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 const dotenv = require('dotenv');
 
+// Require MeaningCloud npm package
+var meaningCloud = require('meaning-cloud');
+
 dotenv.config();
 var textapi = new meaningCloud({
     application_key: process.env.API_Key
