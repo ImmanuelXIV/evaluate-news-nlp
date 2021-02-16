@@ -16,7 +16,7 @@ function handleSubmit(event) {
         });
     }
     else {
-        console.log(`Text input is invalid. Only alphanumeric signs are permitted.`)
+        alert("Only alphanumeric signs are permitted.")
     }
 
 }
