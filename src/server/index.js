@@ -33,8 +33,21 @@ app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
 
-/*
+
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
-*/
+
+// make API request
+app.post('/getSentiment', function(req, res) {
+    const text = req.body.text;
+    const url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_Key}
+    &of=json&txt=${text}&model=general&lang=en`
+    const data = await fetch(url);
+    try {
+        res.send(await data.json());
+    }
+    catch(error) {
+        console.log(`An error occurred in server/index.js during API request: ${error}`);
+    }
+})
