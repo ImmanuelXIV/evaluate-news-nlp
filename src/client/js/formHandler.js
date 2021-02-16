@@ -21,8 +21,8 @@ function handleSubmit(event) {
     // make request to server via /getSentiment (server does API request)    
     Client.postData('http://localhost:8081/getSentiment', {text: formText})
     .then(function(data) {
-        //ToDo: Client.updateUI(data)
-    })
+        Client.updateEntry(data)
+    });
 
 }
 

@@ -2,23 +2,20 @@ var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const fetch = require('node-fetch')
 
-// Require MeaningCloud npm package
-//var meaningCloud = require('meaning-cloud');
-
-
-console.log(`Your process.env.API_Key is ${ process.env.API_Key }`);
-
+// get API key
 dotenv.config();
-/*
-var textapi = new meaningCloud({
-    application_key: process.env.API_Key
-});
-console.log(`Your API key is ${textapi}`);
-*/
 
 const app = express()
 
+// Configure express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+// Cors for cross origin allowance
+app.use(cors());
 app.use(express.static('dist'))
 
 console.log(__dirname)
@@ -39,10 +36,14 @@ app.get('/test', function (req, res) {
 })
 
 // make API request
-app.post('/getSentiment', function(req, res) {
+app.post('/getSentiment', async function(req, res) {
     const text = req.body.text;
-    const url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_Key}
+    const url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}
     &of=json&txt=${text}&model=general&lang=en`
+
+    //console.log(`Your process.env.API_Key is ${ process.env.API_KEY}`);
+    console.log(`This is the url: ${url}`);
+
     const data = await fetch(url);
     try {
         res.send(await data.json());
@@ -51,3 +52,6 @@ app.post('/getSentiment', function(req, res) {
         console.log(`An error occurred in server/index.js during API request: ${error}`);
     }
 })
+
+// POST route
+//app.post
