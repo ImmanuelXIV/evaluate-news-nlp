@@ -1,4 +1,4 @@
-// Make async POSt request to server
+// Make async POST request to server
 const postData = async function(url='', data={}) {
     const res = await fetch(url, {
         method: 'POST',
@@ -12,8 +12,8 @@ const postData = async function(url='', data={}) {
         return await res.json();
     }
     catch(error) {
-        console.log(`An error occured during function call postData: ${error}`);
+        console.log(`An error occured during client/js/postData.js: ${error}`);
     }
 };
 
-export {postData}
+export { postData };

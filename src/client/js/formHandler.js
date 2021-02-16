@@ -6,6 +6,8 @@ function handleSubmit(event) {
     Client.checkForName(formText)
 
     console.log("::: Form Submitted :::")
+
+    /*
     fetch('http://localhost:8081/test')
     .then(res => {
         return res.json()
@@ -14,6 +16,14 @@ function handleSubmit(event) {
     .then(function(data) {
         document.getElementById('results').innerHTML = data.message
     })
+    */
+
+    // make request to server via /getSentiment (server does API request)    
+    Client.postData('http://localhost:8081/getSentiment', {text: formText})
+    .then(function(data) {
+        //ToDo: Client.updateUI(data)
+    })
+
 }
 
 export { handleSubmit }
