@@ -53,5 +53,3 @@ app.post('/getSentiment', async function(req, res) {
     }
 })
 
-// POST route
-//app.post
