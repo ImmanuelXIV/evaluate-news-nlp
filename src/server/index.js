@@ -4,13 +4,18 @@ const mockAPIResponse = require('./mockAPI.js')
 const dotenv = require('dotenv');
 
 // Require MeaningCloud npm package
-var meaningCloud = require('meaning-cloud');
+//var meaningCloud = require('meaning-cloud');
+
+
+console.log(`Your process.env.API_Key is ${ process.env.API_Key }`);
 
 dotenv.config();
+/*
 var textapi = new meaningCloud({
     application_key: process.env.API_Key
 });
-console.log(`YOur API key is ${textapi}`);
+console.log(`Your API key is ${textapi}`);
+*/
 
 const app = express()
 
@@ -28,6 +33,8 @@ app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
 
+/*
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
+*/
