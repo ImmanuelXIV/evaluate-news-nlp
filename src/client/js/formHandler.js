@@ -3,7 +3,7 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    // Check if formText is valid ASCII sign
+    // Check if formText is alphanumeric
     if (isValid(formText)) {
         Client.checkForName(formText)
 
@@ -16,7 +16,7 @@ function handleSubmit(event) {
         });
     }
     else {
-        console.log(`Text input is invalid. Only ASCII signs are permitted.`)
+        console.log(`Text input is invalid. Only alphanumeric signs are permitted.`)
     }
 
 }
@@ -24,6 +24,7 @@ function handleSubmit(event) {
 export { handleSubmit }
 
 const isValid = function(text) {
-    const regEx = /^[\x00-\x7F]*$/;
+    // only alphanumeric characters
+    const regEx = /^[\w\-\s]+$/;
     return regEx.test(text);
 }
