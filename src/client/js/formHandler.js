@@ -28,3 +28,5 @@ const isValid = function(text) {
     const regEx = /^[\w\-\s]+$/;
     return regEx.test(text);
 }
+
+export { isValid }
