@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 // Make async POST request to server
 const postData = async function(url='', data={}) {
     const res = await fetch(url, {

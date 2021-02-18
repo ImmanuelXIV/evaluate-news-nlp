@@ -9,8 +9,14 @@ function updateEntry(data) {
             `;
     }
     catch(error) {
-        console.log(`An error ocurred while updating the UI: ${error}`);
+        console.log(errorMsg);
     }
 };
 
 export { updateEntry }
+
+function errorMsg(error) {
+    return `An error ocurred while updating the UI: ${error}`;
+}
+
+export { errorMsg }
