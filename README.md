@@ -1,196 +1,43 @@
-# Project Instructions
+# Client-Server NLP WebApp
 
-This repo is your starter code for the project. It is the same as the starter code we began with in lesson 2. Install and configure Webpack just as we did in the course. Feel free to refer to the course repo as you build this one, and remember to make frequent commits and to create and merge branches as necessary!
+This repository creates a little client-server side web application that can send text snipets to the MeaningCloud Sentiment Analysis API and display the results. It's a great starting point if you are interested in learning about
 
-The goal of this project is to give you practice with:
 - Setting up Webpack
 - Sass styles
 - Webpack Loaders and Plugins
 - Creating layouts and page design
 - Service workers
 - Using APIs and creating requests to external urls
+- Basic Natural Language Processing
 
-On top of that, I want to introduce you to the topic of Natural Language Processing. NLPs leverage machine learning and deep learning create a program that can interpret natural human speech. Systems like Alexa, Google Assistant, and many voice interaction programs are well known to us, but understanding human speech is an incredibly difficult task and requires a lot of resources to achieve. Full disclosure, this is the Wikipedia definition, but I found it to be a clear one:
+## Installation Instructions
+In the terminal run:
+- `git clone https://github.com/ImmanuelXIV/evaluate-news-nlp.git`
+- `cd evaluate-news-nlp`
+- Side note: If you are using Mac OS X you might need to install Xcode or Xcode Command Line Tools (e.g., see [here](https://apps.apple.com/de/app/xcode/id497799835?mt=12))
+- Run `npm install` to install all dependencies listed in `package.json`. Among them are e.g., webpack, babel, node-sass, and jest (and some more). Checkout the file if you are interested. If you get an error, try `rm -rf node_modules`, `rm package-lock.json` and install node via brew `brew install node` and try again.
 
-> Natural language processing (NLP) is a subfield of computer science, information engineering, and artificial intelligence
-concerned with the interactions between computers and human (natural) languages, in particular how to program computers to
-process and analyze large amounts of natural language data.
+## Get API credentials
+- Go to [meaningcloud.com](https://www.meaningcloud.com/developer/sentiment-analysis) and create an account. At the time of writing, the API is free to use up to 1000 requests per day or 333 intensive requests. It is free to check how many requests you have remaining for the day.
+- Create a file called `.env` in the root valuate-news-nlp folder and paste this line inside the file `API_KEY=xxxxx<PasteYourKeyHere>xxxxxx`
 
-You could spend years and get a masters degree focusing on the details of creating NLP systems and algorithms. Typically, NLP programs require far more resources than individuals have access to, but a fairly new API called Aylien has put a public facing API in front of their NLP system. We will use it in this project to determine various attributes of an article or blog post.
+## Run The App
+- Run `npm run build-prod` - should finish without an error.
+- Run `npm run start`
+- Go to [http://localhost:8081/](http://localhost:8081/) in your browser (e.g. Google Chrome). By default, this app runs on port 8081, but you can edit that in `src/server/index.js`. If everything, goes well, you'll see the app running and a message popping up saying "I EXIST".
+- Open another terminal tab ad run `npm run build-dev`. Now, Chrome should open a tab, go to http://localhost:8080/ and respond as before.
+- In the [http://localhost:8081/](http://localhost:8081/) tab, provide an input text (only alphanumeric values, else you get a warning) such as "JavaScript is fun", wait a second and see the results displayed in the website.
+- Tadaaa - the app is running as intended!
 
-## Getting started
+## Testing The App With Jest
+If you want to check out the basic Jest unit test in the repository then
+- Run `npm run test` in the terminal and look at the test information provided.
 
-It would probably be good to first get your basic project setup and functioning. Follow the steps from the course up to Lesson 4 but don't add Service Workers just yet. We won't need the service workers during development and having extra caches floating around just means there's more potential for confusion. So, fork this repo and begin your project setup.
+## Extend This project
+- Deploying the project e.g., on [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) should be fun.
+- You could display more information received from the MeaningCloud API.
+- Brush up the appearance of the web app.
+- Be creative
 
-Remember that once you clone, you will still need to install everything:
-
-`cd` into your new folder and run:
-- `git branch initial-setup`
-- `git checkout initial setup`
-(
-- `npm install`
-- `npm audit fix`
-- `npm cache clean` 
-- `[sudo] npm install -g npm`
-- `npm install`
-)
-
-- install Xcode or Xcode Command Line Tools
-- `rm -rf node_modules`
-- `rm package-lock.json`
-- `brew install node` add Os Catalina version mention problems
-- `npm install`
-- `npm run build-prod` , should finish without errors
-- then run `npm run start`
-- Check the website running at [http://localhost:8080/](http://localhost:8080/). By default, this app runs on port 8080, but you can, of course, edit that in `server.js`. If everything, goes well, you'll see the app running and a message popping up say "I EXIST".
-
-- In another terminal - `npm run build-dev`, http://localhost:8081/ should open and respond as before
-- Install Webpack and the command line instructions (CLI) tool using npm, as:
-`npm i webpack webpack-cli` 
-Remember that `npm i` is just shorthand for `npm install`. A CLI is a terminal program that allows developers to run commands from the command line to communicate with the Webpack.
-
-
-- rm -rf dist
-- `rm -rf node_modules`
-- `brew install node`
-- `npm install`
-
-- npm run build-dev throws error
-
-- delete package lock
-- use original package.json 
-- npm install
-- npm run build-dev throws error
-
-# Important!
-- npm install -g npm@latest
-- npm install throws error
-- npm install -g npm
-- npm install throws no errors
-- npm run build-dev works!!!! Finally
-
-# Sass
-- npm i -D style-loader node-sass css-loader sass-loader
-- npm run build-dev # App runss with style applied after clicking button
-
-# Fixing functinoality
-- in one terminal run `npm run build-dev`
-- in the other terminal run `npm run build-prod` and thereby generate the `dist` folder for prod
-- Run the Express server on port 8081 via `npm start` 
-
-- npm install
-
-# Lesson4: 5. Webpack for production: 
-- `npm run build-prod` throws error
-
-- `npm i -D mini-css-extract-plugin`
-- `npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin`
-- `npm run build-prod` builds without an error and adds `main.css` in `dist`
-
-# API
-- click [here](https://www.meaningcloud.com/developer/sentiment-analysis) and create an account for ManingCloud.
-- Use npm to install the dotenv package - npm install dotenv This will allow us to use environment variables we set in a new file
-
-- npm install -g npm
-- `npm run build-prod` throws error
-- `npm rebuild node-sass` -> rebuilt dependencies successfully
-
-- `npm run build-dev` builds successfully
-- `npm run build-prod` builds successfully
-
-- `npm i --save-dev @babel/plugin-transform-runtime`
-- `npm i node-fetch`
-- `npm i dotenv`
-
-# Unit Testing using Jest Framework
-- `npm install --save-dev jest`
-- `npm rebuild node-sass`
-- `npm install --save-dev jsdom`
-- `npm rebuild node-sass`
-
-
-
-
-
-
-
-
-## Setting up the API
-
-The Aylien API is perhaps different than what you've used before. It has you install a node module to run certain commands through, it will simplify the requests we need to make from our node/express backend.
-
-### Step 1: Signup for an API key
-First, you will need to go [here](https://developer.aylien.com/signup). Signing up will get you an API key. Don't worry, at the time of this course, the API is free to use up to 1000 requests per day or 333 intensive requests. It is free to check how many requests you have remaining for the day.
-
-### Step 2: Install the SDK
-Next you'll need to get the SDK. SDK stands for Software Development Kit, and SDKs are usually a program that brings together various tools to help you work with a specific technology. SDKs will be available for all the major languages and platforms, for instance the Aylien SDK brings together a bunch of tools and functions that will make it possible to interface with their API from our server and is available for Node, Python, PHP, Go, Ruby and many others. We are going to use the Node one, the page is available [here](https://docs.aylien.com/textapi/sdks/#sdks). You get 1000 free requests per day.
-
-### Step 3: Require the SDK package
-Install the SDK in your project and then we'll be ready to set up your server/index.js file.
-
-Your server index.js file must have these things:
-
-- [ ] Require the Aylien npm package
-```
-var aylien = require("aylien_textapi");
-```
-
-### Step 4: Environment Variables
-Next we need to declare our API keys, which will look something like this:
-```
-// set aylien API credentias
-var textapi = new aylien({
-  application_id: "your-api-id",
-  application_key: "your-key"
-});
-```
-
-...but there's a problem with this. We are about to put our personal API keys into a file, but when we push, this file is going to be available PUBLICLY on Github. Private keys, visible publicly are never a good thing. So, we have to figure out a way to make that not happen. The way we will do that is with environment variables. Environment variables are pretty much like normal variables in that they have a name and hold a value, but these variables only belong to your system and won't be visible when you push to a different environment like Github.
-
-- [ ] Use npm or yarn to install the dotenv package ```npm install dotenv```. This will allow us to use environment variables we set in a new file
-- [ ] Create a new ```.env``` file in the root of your project
-- [ ] Go to your .gitignore file and add ```.env``` - this will make sure that we don't push our environment variables to Github! If you forget this step, all of the work we did to protect our API keys was pointless.
-- [ ] Fill the .env file with your API keys like this:
-```
-API_ID=**************************
-API_KEY=**************************
-```
-- [ ] Add this code to the very top of your server/index.js file:
-```
-const dotenv = require('dotenv');
-dotenv.config();
-```
-- [ ] Reference variables you created in the .env file by putting ```process.env``` in front of it, an example might look like this:
-```
-console.log(`Your API key is ${process.env.API_KEY}`);
-```
-...Not that you would want to do that. This means that our updated API credential settings will look like this:
-```javascript
-// set aylien API credentials
-// NOTICE that textapi is the name I used, but it is arbitrary. 
-// You could call it aylienapi, nlp, or anything else, 
-//   just make sure to make that change universally!
-var textapi = new aylien({
-  application_id: process.env.API_ID,
-  application_key: process.env.API_KEY
-});
-```
-
-### Step 5: Using the API
-
-We're ready to go! The API has a lot of different endpoints you can take a look at [here](https://docs.aylien.com/textapi/endpoints/#api-endpoints). And you can see how using the SDK simplifies the requests we need to make. 
-
-I won't provide further examples here, as it's up to you to create the various requests and make sure your server is set up appropriately.
-
-## After the Aylien API
-
-Once you are hooked up to the Aylien API, you are most of the way there! Along with making sure you are following all the requirements in the project rubric in the classroom, here are a few other steps to make sure you take.
-
-- Parse the response body to dynamically fill content on the page.
-- Test that the server and form submission work, making sure to also handle error responses if the user input does not match API requirements.
-- Go back to the web pack config and add the setup for service workers. 
-- Test that the site is now available even when you stop your local server
-
-## Deploying
-
-A great step to take with your finished project would be to deploy it! Unfortunately its a bit out of scope for me to explain too much about how to do that here, but checkout [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) for some really intuitive free hosting options.
+## Acknowledgements
+This project of Udacity's Front End Web development Nanodegree. If you are interested, or just want to freshen up your Front End game, I can highly recommend the course!
