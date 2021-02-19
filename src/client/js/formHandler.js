@@ -5,8 +5,6 @@ function handleSubmit(event) {
     let formText = document.getElementById('name').value
     // Check if formText is alphanumeric
     if (isValid(formText)) {
-        Client.checkForName(formText)
-
         console.log("::: Form Submitted :::")
 
         // make request to server via /getSentiment (server does API request)    

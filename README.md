@@ -95,16 +95,20 @@ Remember that `npm i` is just shorthand for `npm install`. A CLI is a terminal p
 - `npm run build-prod` throws error
 - `npm rebuild node-sass` -> rebuilt dependencies successfully
 
-(- `npm install meaning-cloud --save`
-- `npm i --save-dev @types/meaning-cloud`)
-
 - `npm run build-dev` builds successfully
 - `npm run build-prod` builds successfully
 
 - `npm i --save-dev @babel/plugin-transform-runtime`
 - `npm i node-fetch`
+- `npm i dotenv`
 
-- `npm uninstall meaning-cloud`
+# Unit Testing using Jest Framework
+- `npm install --save-dev jest`
+- `npm rebuild node-sass`
+- `npm install --save-dev jsdom`
+- `npm rebuild node-sass`
+
+
 
 
 
