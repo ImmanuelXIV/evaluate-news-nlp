@@ -62,12 +62,21 @@ Remember that `npm i` is just shorthand for `npm install`. A CLI is a terminal p
 - npm install
 - npm run build-dev throws error
 
+# Important!
 - npm install -g npm@latest
 - npm install throws error
 - npm install -g npm
 - npm install throws no errors
 - npm run build-dev works!!!! Finally
 
+# Sass
+- npm i -D style-loader node-sass css-loader sass-loader
+- npm run build-dev # App runss with style applied after clicking button
+
+# Fixing functinoality
+- in one terminal run `npm run build-dev`
+- in the other terminal run `npm run build-prod` and thereby generate the `dist` folder for prod
+- Run the Express server on port 8081 via `npm start` 
 
 
 
