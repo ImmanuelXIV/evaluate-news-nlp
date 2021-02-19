@@ -1,7 +1,6 @@
 # Client-Server NLP WebApp
 
 This repository creates a little client-server side web application that can send text snipets to the MeaningCloud Sentiment Analysis API and display the results. It's a great starting point if you are interested in learning about
-
 - Setting up Webpack
 - Sass styles
 - Webpack Loaders and Plugins
@@ -9,6 +8,10 @@ This repository creates a little client-server side web application that can sen
 - Service workers
 - Using APIs and creating requests to external urls
 - Basic Natural Language Processing
+
+Initial Page             |  Page Response
+:-------------------------:|:-------------------------:
+![Initial Page](images/page-1.png)  |  ![Page Response](images/page-2.png)
 
 ## Installation Instructions
 In the terminal run:
