@@ -78,7 +78,33 @@ Remember that `npm i` is just shorthand for `npm install`. A CLI is a terminal p
 - in the other terminal run `npm run build-prod` and thereby generate the `dist` folder for prod
 - Run the Express server on port 8081 via `npm start` 
 
+- npm install
 
+# Lesson4: 5. Webpack for production: 
+- `npm run build-prod` throws error
+
+- `npm i -D mini-css-extract-plugin`
+- `npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin`
+- `npm run build-prod` builds without an error and adds `main.css` in `dist`
+
+# API
+- click [here](https://www.meaningcloud.com/developer/sentiment-analysis) and create an account for ManingCloud.
+- Use npm to install the dotenv package - npm install dotenv This will allow us to use environment variables we set in a new file
+
+- npm install -g npm
+- `npm run build-prod` throws error
+- `npm rebuild node-sass` -> rebuilt dependencies successfully
+
+(- `npm install meaning-cloud --save`
+- `npm i --save-dev @types/meaning-cloud`)
+
+- `npm run build-dev` builds successfully
+- `npm run build-prod` builds successfully
+
+- `npm i --save-dev @babel/plugin-transform-runtime`
+- `npm i node-fetch`
+
+- `npm uninstall meaning-cloud`
 
 
 
