@@ -36,7 +36,7 @@ Remember that once you clone, you will still need to install everything:
 )
 
 - install Xcode or Xcode Command Line Tools
-- `rm -r node_modules`
+- `rm -rf node_modules`
 - `rm package-lock.json`
 - `brew install node` add Os Catalina version mention problems
 - `npm install`
@@ -49,11 +49,25 @@ Remember that once you clone, you will still need to install everything:
 `npm i webpack webpack-cli` 
 Remember that `npm i` is just shorthand for `npm install`. A CLI is a terminal program that allows developers to run commands from the command line to communicate with the Webpack.
 
-(
-- rm -rf dist
-- npm run build
 
-)
+- rm -rf dist
+- `rm -rf node_modules`
+- `brew install node`
+- `npm install`
+
+- npm run build-dev throws error
+
+- delete package lock
+- use original package.json 
+- npm install
+- npm run build-dev throws error
+
+- npm install -g npm@latest
+- npm install throws error
+- npm install -g npm
+- npm install throws no errors
+- npm run build-dev works!!!! Finally
+
 
 
 
